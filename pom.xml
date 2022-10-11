@@ -60,7 +60,7 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>com.example.textfinderclient/com.example.textfinderclient.HelloApplication
+                            <mainClass>com.example.textfinderclient/com.example.textfinderclient.ClientApplication
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
