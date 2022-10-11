@@ -1,23 +1,20 @@
 package com.example.textfinderclient;
-import java.io.File;
+import javafx.stage.FileChooser;
+
+import java.io.*;
 
 public class FileManager {
-    //class attributes
-    private String file;
 
     //class constructor
-    public FileManager(String File){
-        this.file = File;
-    }
+    public FileManager(){}
 
     //class methods
-    public String getFile() {return file;}
-    public void setFile(String file) {this.file = file;}
-
-    public void moveFile(String file){
-        File originalFile = new File(file);
-
+    public void AddToLibrary() throws IOException {
+        FileChooser fc = new FileChooser();
+        fc.setInitialDirectory(new File("TextsLibrary"));
+        File text = fc.showOpenDialog(null);
+        File opText = new File("TextsLibrary");
+        System.out.println(text);
+        System.out.println(opText);
     }
-
-
 }
