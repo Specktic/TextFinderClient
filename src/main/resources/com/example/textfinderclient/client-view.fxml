@@ -6,7 +6,7 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.textfinderclient.ClientController">
    <children>
-      <Button fx:id="addButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#openSearch" text="Add to Library" />
-      <ListView layoutX="122.0" layoutY="14.0" prefHeight="200.0" prefWidth="445.0" />
+      <Button fx:id="addButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#addText" text="Add to Library" />
+      <ListView fx:id="library" layoutX="122.0" layoutY="14.0" prefHeight="200.0" prefWidth="445.0" />
    </children>
 </AnchorPane>

@@ -2,6 +2,9 @@ package com.example.textfinderclient;
 import javafx.stage.FileChooser;
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 public class FileManager {
 
@@ -11,10 +14,27 @@ public class FileManager {
     //class methods
     public void AddToLibrary() throws IOException {
         FileChooser fc = new FileChooser();
-        fc.setInitialDirectory(new File("TextsLibrary"));
+        fc.setInitialDirectory(new File("Texts"));
         File text = fc.showOpenDialog(null);
-        File opText = new File("TextsLibrary");
-        System.out.println(text);
-        System.out.println(opText);
+        if (text != null){
+            Path textName = Paths.get(String.valueOf(text));
+            Path libraryName = Paths.get("TextsLibrary" + "\\" + text.getName());
+
+            if (!((libraryName.toFile()).exists())){
+                Files.copy(textName, libraryName);
+            } else {
+                int i = 1;
+                Path altName = Paths.get("TextsLibrary" + "\\" + text.getName()
+                        + " (" + String.valueOf(i) + ")");
+                while ((altName.toFile().exists())){
+                    i++;
+                    altName = Paths.get("TextsLibrary" + "\\" + text.getName()
+                            + " (" + String.valueOf(i) + ")");
+                }
+                Files.copy(textName, altName);
+            }
+        } else {
+            System.out.println("no file selected");
+        }
     }
 }
