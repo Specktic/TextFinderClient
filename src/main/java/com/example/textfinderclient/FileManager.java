@@ -19,17 +19,16 @@ public class FileManager {
         if (text != null){
             Path textName = Paths.get(String.valueOf(text));
             Path libraryName = Paths.get("TextsLibrary" + "\\" + text.getName());
-
-            if (!((libraryName.toFile()).exists())){
+            if (!((libraryName.toFile()).exists())){    //text file to add isn't already in library
                 Files.copy(textName, libraryName);
-            } else {
+            } else {                                    //text file to add is already in library
                 int i = 1;
-                Path altName = Paths.get("TextsLibrary" + "\\" + text.getName()
-                        + " (" + String.valueOf(i) + ")");
+                Path altName = Paths.get("TextsLibrary" + "\\" +
+                        text.getName() + " (" + String.valueOf(i) + ")");   //adds repeat file suffix
                 while ((altName.toFile().exists())){
                     i++;
-                    altName = Paths.get("TextsLibrary" + "\\" + text.getName()
-                            + " (" + String.valueOf(i) + ")");
+                    altName = Paths.get("TextsLibrary" + "\\" +
+                            text.getName() + " (" + String.valueOf(i) + ")");   //updates repeat file suffix
                 }
                 Files.copy(textName, altName);
             }
