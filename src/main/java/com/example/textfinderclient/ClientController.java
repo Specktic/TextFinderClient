@@ -16,8 +16,7 @@ public class ClientController implements Initializable {
     private FileManager fl = new FileManager();
 
     public void addText() throws IOException {
-        library.getItems().add(fl.AddToLibrary());
-
+        fl.addToLibrary();
     }
 
     @Override

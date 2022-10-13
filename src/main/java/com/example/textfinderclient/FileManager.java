@@ -12,7 +12,7 @@ public class FileManager {
     public FileManager(){}
 
     //class methods
-    public void AddToLibrary() throws IOException {
+    public void addToLibrary() throws IOException {
         FileChooser fc = new FileChooser();
         fc.setInitialDirectory(new File("Texts"));
         File text = fc.showOpenDialog(null);

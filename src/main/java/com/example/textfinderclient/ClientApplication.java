@@ -11,7 +11,7 @@ public class ClientApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(ClientApplication.class.getResource("client-view.fxml")); // la funcion lee la configuracion de la ventana
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400); // crea un nuevo objeto scene
+        Scene scene = new Scene(fxmlLoader.load(), 600, 405); // crea un nuevo objeto scene
         stage.setTitle(" ");
         stage.setScene(scene);
         stage.show();
