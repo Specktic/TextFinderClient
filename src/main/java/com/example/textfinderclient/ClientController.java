@@ -16,10 +16,10 @@ public class ClientController implements Initializable {
     private TextField searchValue;
     private File textLibrary = new File("TextsLibrary");
     private File[] libraryContent = textLibrary.listFiles();
-    private FileManager fl = new FileManager();
+    private LibraryManagement lm = new LibraryManagement();
 
     public void addText() throws IOException {
-        fl.addToLibrary();
+        lm.addToLibrary();
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

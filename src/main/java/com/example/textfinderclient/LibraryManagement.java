@@ -6,10 +6,10 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-public class FileManager {
+public class LibraryManagement {
 
     //class constructor
-    public FileManager(){}
+    public LibraryManagement(){}
 
     //class methods
     public void addToLibrary() throws IOException {
