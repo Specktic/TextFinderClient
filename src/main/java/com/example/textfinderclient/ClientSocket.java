@@ -27,9 +27,6 @@ public class ClientSocket{
             /* waits for data to be collected before closing */
             cs.setSoLinger(true, 10);
 
-            /* gets a reading stream for object reading */
-            DataInputStream bufferedIn = new DataInputStream(cs.getInputStream());
-
             /* data flux for sending data to server */
             DataOutputStream bufferSalida =
                     new DataOutputStream (cs.getOutputStream());
