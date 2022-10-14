@@ -21,6 +21,12 @@ public class ClientController implements Initializable {
     public void addText() throws IOException {
         lm.addToLibrary();
     }
+
+    public String search(){
+        System.out.println(searchValue.getText());
+        return searchValue.getText();
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         library.getItems().addAll(libraryContent);

@@ -7,12 +7,13 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.paint.LinearGradient?>
 <?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #dddddd;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.textfinderclient.ClientController">
+<AnchorPane prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #dddddd;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.textfinderclient.ClientController">
    <children>
-      <Rectangle height="135.0" layoutY="265.0" smooth="false" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="605.0">
+      <Rectangle height="135.0" layoutY="465.0" smooth="false" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="605.0">
          <fill>
             <LinearGradient endX="1.0" endY="0.13880128664925273" startX="0.40694005857882815" startY="0.9116719754336384">
                <stops>
@@ -35,11 +36,11 @@
             </LinearGradient>
          </fill>
       </Rectangle>
-      <Button alignment="CENTER_RIGHT" layoutX="411.0" layoutY="34.0" mnemonicParsing="false" onAction="#addText" prefHeight="37.0" prefWidth="175.0" style="-fx-background-color: #eeeeee;" text="Add" textFill="#00bbe0">
+      <Button alignment="CENTER_RIGHT" layoutX="410.0" layoutY="34.0" mnemonicParsing="false" onAction="#addText" prefHeight="37.0" prefWidth="175.0" style="-fx-background-color: #eeeeee;" text="Add" textFill="#00bbe0">
          <font>
             <Font name="Berlin Sans FB" size="18.0" />
          </font></Button>
-      <Rectangle height="400.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="135.0">
+      <Rectangle height="601.0" layoutY="-1.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="135.0">
          <fill>
             <LinearGradient endX="1.0" endY="0.028391167192429026" startY="0.4037855024969541">
                <stops>
@@ -62,15 +63,23 @@
             </LinearGradient>
          </fill>
       </Rectangle>
-      <Rectangle fill="#bbbbbb" height="26.0" layoutX="431.0" layoutY="41.0" stroke="#bbbbbb" strokeType="INSIDE" width="5.0" />
-      <Rectangle fill="#bbbbbb" height="26.0" layoutX="431.0" layoutY="41.0" rotate="90.0" stroke="#bbbbbb" strokeType="INSIDE" width="5.0" />
-      <TextField fx:id="searchValue" layoutX="14.0" layoutY="118.0" prefHeight="26.0" prefWidth="572.0" promptText="Search for..." style="-fx-background-color: #ffffff;" />
-      <Button alignment="CENTER_RIGHT" layoutX="411.0" layoutY="71.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="175.0" style="-fx-background-color: #eeeeee;" text="Remove" textFill="#00bbe0">
+      <Rectangle arcHeight="10.0" arcWidth="10.0" fill="#bbbbbb" height="26.0" layoutX="431.0" layoutY="41.0" stroke="#bbbbbb" strokeType="INSIDE" width="5.0" />
+      <Rectangle arcHeight="10.0" arcWidth="10.0" fill="#bbbbbb" height="26.0" layoutX="431.0" layoutY="41.0" rotate="90.0" stroke="#bbbbbb" strokeType="INSIDE" width="5.0" />
+      <Button alignment="CENTER_RIGHT" layoutX="410.0" layoutY="71.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="175.0" style="-fx-background-color: #eeeeee;" text="Remove" textFill="#00bbe0">
          <font>
             <Font name="Berlin Sans FB" size="18.0" />
          </font>
       </Button>
-      <Rectangle fill="#bbbbbb" height="26.0" layoutX="431.0" layoutY="78.0" rotate="90.0" stroke="#bbbbbb" strokeType="INSIDE" width="5.0" />
+      <Rectangle arcHeight="10.0" arcWidth="10.0" fill="#bbbbbb" height="26.0" layoutX="431.0" layoutY="78.0" rotate="90.0" stroke="#bbbbbb" strokeType="INSIDE" width="5.0" />
       <ListView fx:id="library" layoutX="14.0" layoutY="34.0" prefHeight="75.0" prefWidth="399.0" style="-fx-background-color: #ffffff; -fx-border-color: #ffffff;" />
+      <Button alignment="CENTER_RIGHT" layoutX="410.0" layoutY="143.0" mnemonicParsing="false" onAction="#search" prefHeight="37.0" prefWidth="175.0" style="-fx-background-color: #eeeeee;" text="Search" textFill="#00bbe0">
+         <font>
+            <Font name="Berlin Sans FB" size="18.0" />
+         </font>
+      </Button>
+      <TextField fx:id="searchValue" layoutX="14.0" layoutY="118.0" prefHeight="26.0" prefWidth="572.0" promptText="Search for..." style="-fx-background-color: #ffffff;" />
+      <Circle fill="#bbbbbb" layoutX="431.0" layoutY="160.0" radius="10.0" stroke="#bbbbbb" strokeType="INSIDE" />
+      <Rectangle arcHeight="10.0" arcWidth="10.0" fill="#bbbbbb" height="26.0" layoutX="435.0" layoutY="153.0" rotate="135.0" stroke="#bbbbbb" strokeType="INSIDE" width="5.0" />
+      <Circle fill="#eeeeee" layoutX="431.0" layoutY="160.0" radius="7.8" stroke="#eeeeee" strokeType="INSIDE" />
    </children>
 </AnchorPane>
