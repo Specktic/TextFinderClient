@@ -25,10 +25,15 @@ public class SocketData implements Serializable{
      */
     private int l;
 
+    public String toString(){
+        return d;
+    }
+
     /**
      * method for writing attributes as a DataOutputStream
      */
     public void writeObject(java.io.DataOutputStream out) throws IOException{
+        out.writeInt (l+1);
         out.writeBytes(d);
         out.writeByte('\0');
     }

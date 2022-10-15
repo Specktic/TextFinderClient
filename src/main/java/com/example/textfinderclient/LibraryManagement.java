@@ -36,4 +36,8 @@ public class LibraryManagement {
             System.out.println("no file selected");
         }
     }
+
+    public void removeFromLibrary(){
+
+    }
 }

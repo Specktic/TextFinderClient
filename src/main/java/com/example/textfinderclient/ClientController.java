@@ -18,7 +18,7 @@ public class ClientController implements Initializable {
     private File[] libraryContent = textLibrary.listFiles();
     private LibraryManagement lm = new LibraryManagement();
 
-    private ClientSocket cs = new ClientSocket();
+    private CSocket cs = new CSocket();
 
     public void addText() throws IOException {
         lm.addToLibrary();

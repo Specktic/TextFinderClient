@@ -1,13 +1,12 @@
 package com.example.textfinderclient;
 
-import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.net.Socket;
 
 /**
  * A class for establishing server connection and reading server data
  */
-public class ClientSocket{
+public class CSocket {
     public void send(String outputFlux){
         try {
             /* client socket is created */
