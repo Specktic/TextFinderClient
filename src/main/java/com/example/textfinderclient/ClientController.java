@@ -18,13 +18,15 @@ public class ClientController implements Initializable {
     private File[] libraryContent = textLibrary.listFiles();
     private LibraryManagement lm = new LibraryManagement();
 
+    private ClientSocket cs = new ClientSocket();
+
     public void addText() throws IOException {
         lm.addToLibrary();
     }
 
-    public String search(){
+    public void search(){
         System.out.println(searchValue.getText());
-        return searchValue.getText();
+        cs.send(searchValue.getText());
     }
 
     @Override
