@@ -15,22 +15,25 @@ public class ClientController implements Initializable {
     @FXML
     private TextField searchValue;
     private File textLibrary = new File("TextsLibrary");
-    private File[] libraryContent = textLibrary.listFiles();
+    private File[] libraryFiles = textLibrary.listFiles();
     private LibraryManagement lm = new LibraryManagement();
-
     private CSocket cs = new CSocket();
 
-    public void addText() throws IOException {
+    public void addFile() throws IOException {
         lm.addToLibrary();
     }
 
     public void search(){
         System.out.println(searchValue.getText());
-        cs.send(searchValue.getText());
+        cs.communicate(searchValue.getText());
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        library.getItems().addAll(libraryContent);
+        int i = 0;
+        while (i < libraryFiles.length){
+            library.getItems().add(libraryFiles[i].getName());
+            i++;
+        }
     }
 }

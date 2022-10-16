@@ -36,7 +36,7 @@
             </LinearGradient>
          </fill>
       </Rectangle>
-      <Button alignment="CENTER_RIGHT" layoutX="410.0" layoutY="34.0" mnemonicParsing="false" onAction="#addText" prefHeight="37.0" prefWidth="175.0" style="-fx-background-color: #eeeeee;" text="Add" textFill="#00bbe0">
+      <Button alignment="CENTER_RIGHT" layoutX="410.0" layoutY="34.0" mnemonicParsing="false" onAction="#addFile" prefHeight="37.0" prefWidth="175.0" style="-fx-background-color: #eeeeee;" text="Add" textFill="#00bbe0">
          <font>
             <Font name="Berlin Sans FB" size="18.0" />
          </font></Button>
