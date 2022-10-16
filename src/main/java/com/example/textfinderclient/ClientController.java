@@ -1,6 +1,7 @@
 package com.example.textfinderclient;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 
@@ -24,8 +25,8 @@ public class ClientController implements Initializable {
     }
 
     public void search(){
-        System.out.println(searchValue.getText());
-        cs.communicate(searchValue.getText());
+        cs.send(searchValue.getText());
+        cs.receive();
     }
 
     @Override
