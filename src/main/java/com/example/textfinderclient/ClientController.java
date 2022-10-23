@@ -20,8 +20,8 @@ public class ClientController implements Initializable {
         String search = searchField.getText();
         if (!search.isEmpty()) {
             client.send(search);
-            //client.receive();
             searchField.clear();
+            //client.receive();
         }
     }
 
