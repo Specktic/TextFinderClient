@@ -75,7 +75,7 @@
             <Font name="Berlin Sans FB" size="18.0" />
          </font>
       </Button>
-      <TextField fx:id="searchValue" layoutX="14.0" layoutY="65.0" prefHeight="26.0" prefWidth="572.0" promptText="Search for..." style="-fx-background-color: #ffffff;" />
+      <TextField fx:id="searchField" layoutX="14.0" layoutY="65.0" prefHeight="26.0" prefWidth="572.0" promptText="Search for..." style="-fx-background-color: #ffffff;" />
       <Circle fill="#bbbbbb" layoutX="431.0" layoutY="107.0" radius="10.0" stroke="#bbbbbb" strokeType="INSIDE" />
       <Rectangle arcHeight="10.0" arcWidth="10.0" fill="#bbbbbb" height="26.0" layoutX="436.0" layoutY="101.0" rotate="135.0" stroke="#bbbbbb" strokeType="INSIDE" width="5.0" />
       <Circle fill="#eeeeee" layoutX="431.0" layoutY="107.0" radius="7.8" stroke="#eeeeee" strokeType="INSIDE" />

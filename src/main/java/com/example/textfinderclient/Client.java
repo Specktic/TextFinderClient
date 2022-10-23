@@ -1,23 +1,21 @@
 package com.example.textfinderclient;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
-import java.io.File;
 import java.io.IOException;
 import java.net.Socket;
 
 /** A class for establishing server connection and reading server data */
-public class CSocket {
-    /* client socket is created */
-    Socket cs;
-    { try {
-        cs = new Socket("localhost", 6174);
-        System.out.println("connected to server");
-    } catch (IOException e) {
-        throw new RuntimeException(e);
-    }
+public class Client {
+
+    /** Class constructor */
+    public Client(Socket socket) {
+        this.cs = socket;
     }
 
-    public void sendString(Object outputFlux){
+    private Socket cs;
+
+
+    public void send(String search){
         try {
             /* waits for data to be collected before closing */
             cs.setSoLinger(true, 10);
@@ -26,7 +24,7 @@ public class CSocket {
             DataOutputStream bufferOut = new DataOutputStream(cs.getOutputStream());
 
             /* data is written on the output flux */
-            SocketData auxOut = new SocketData((String) outputFlux);
+            SocketData auxOut = new SocketData(search);
             auxOut.writeObject(bufferOut);
 
             /* prints data sent to console */
