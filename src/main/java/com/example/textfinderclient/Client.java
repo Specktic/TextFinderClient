@@ -16,23 +16,24 @@ public class Client {
     private final Socket cs;
 
     /** Sends a given string to the server */
-    public void send(String search){
+    public void send(String word) throws IOException {
         try {
+
             /* waits for data to be collected before closing */
             cs.setSoLinger(true, 10);
 
-            /* data flux for sending data */
+            /* data flux for sending data to th-  client */
             DataOutputStream bufferOut = new DataOutputStream(cs.getOutputStream());
 
             /* data is written on the output flux */
-            SocketData auxOut = new SocketData(search);
+            SocketData auxOut = new SocketData(word);
             auxOut.writeObject(bufferOut);
 
             /* prints data sent to console */
-            System.out.println ("sent: " + auxOut);
+            System.out.println("sent: " + auxOut);
 
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
     }
 
