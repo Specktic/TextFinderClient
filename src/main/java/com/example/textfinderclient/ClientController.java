@@ -27,7 +27,7 @@ public class ClientController implements Initializable {
         if (!search.isEmpty()) {
             client.send(search);
             searchField.clear();
-            //client.receive();
+            client.receive();
         }
     }
 
