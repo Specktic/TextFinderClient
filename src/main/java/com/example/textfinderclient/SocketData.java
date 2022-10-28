@@ -1,4 +1,5 @@
 package com.example.textfinderclient;
+
 import java.io.*;
 
 public class SocketData implements Serializable{
@@ -6,39 +7,35 @@ public class SocketData implements Serializable{
     public SocketData(String data){
         if (data != null){
             this.len = data.length();
-            this.word = data;
+            this.data = data;
         }
     }
-
     /** Attribute 1, a string */
-    private String word;
+    private String data;
 
     /** Attribute 2, an int */
     private int len;
 
-    /** Returns data fluxes as strings */
+    /** Reads an incoming data flux as a string */
     public String toString(){
-        String word1;
-        word1 = word;
-        return word1;
-
+        return data;
     }
 
-    /** Writes the word attribute to the data output flux */
-    public void writeObject(DataOutputStream out) throws IOException{
-        out.writeInt (len +1);
-        out.writeBytes(word);
-        out.writeByte('\0');
+    /** Writes the d attribute to the output data flux */
+    public void writeObject(java.io.DataOutputStream out) throws IOException{
+        out.writeInt (len + 1);
+        out.writeBytes(data);
+        out.writeByte ('\0');
     }
 
-    /** Reads the incoming data from the data input flux */
-    public void readObject(DataInputStream in) throws IOException{
+    /** Reads the byte array from the data input stream */
+    public void readObject(java.io.DataInputStream in) throws IOException{
         len = in.readInt() - 1;
-        byte [] aux;
+        byte [] aux = null;
 
-        aux = new byte[len];           // byte array size
-        in.read(aux, 0, len);      // Reads bytes
-        word = new String (aux);       // turns into a string
-        in.read(aux,0,1);      // reads \0
+        aux = new byte[len];          // byte array size
+        in.read(aux, 0, len);     // Reads bytes
+        data = new String (aux);      // turns into a string
+        in.read(aux,0,1);     // reads \0
     }
 }

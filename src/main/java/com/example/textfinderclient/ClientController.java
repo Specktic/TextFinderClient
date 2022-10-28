@@ -22,12 +22,12 @@ public class ClientController implements Initializable {
     }
 
     /** Gets the text from the TextField and sends it to the server for searching */
-    public void search(){
+    public void search() throws IOException {
         String search = searchField.getText();
         if (!search.isEmpty()) {
             client.send(search);
             searchField.clear();
-            client.receive();
+            String results = client.receive();
         }
     }
 

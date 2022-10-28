@@ -13,7 +13,7 @@ public class Client {
     }
 
     /** Attribute 1, a socket */
-    private Socket cs;
+    private final Socket cs;
 
     /** Sends a given string to the server */
     public void send(String search){
@@ -36,24 +36,19 @@ public class Client {
         }
     }
 
-    /** Reads received data from the server */
-    public void receive(){
-        try {
-            /* waits for data to be collected before closing */
-            cs.setSoLinger(true, 10);
+    /** Reads incoming data from the server */
+    public String receive() throws IOException {
+        /* waits for client to read data */
+        cs.setSoLinger(true, 10);
 
-            /* data flux for receiving data */
-            DataInputStream bufferIn = new DataInputStream(cs.getInputStream());
+        /* data flux for receiving data from client */
+        DataInputStream bufferIn = new DataInputStream (cs.getInputStream());
 
-            /* incoming data from the server is read */
-            SocketData auxIn = new SocketData("");
-            auxIn.readObject(bufferIn);
+        /* object to be read is created and assigned data from the flux */
+        SocketData auxIn = new SocketData("");
+        auxIn.readObject (bufferIn);
 
-            /* prints incoming data to console  */
-            System.out.println("received: " + auxIn);
-
-        } catch (Exception e){
-            e.printStackTrace();
-        }
+        System.out.println ("received: " + auxIn);
+        return auxIn.toString();
     }
 }
