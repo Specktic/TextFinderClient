@@ -12,9 +12,10 @@ public class Client {
         this.cs = socket;
     }
 
+    /** Attribute 1, a socket */
     private Socket cs;
 
-
+    /** Sends a given string to the server */
     public void send(String search){
         try {
             /* waits for data to be collected before closing */
@@ -35,6 +36,7 @@ public class Client {
         }
     }
 
+    /** Reads received data from the server */
     public void receive(){
         try {
             /* waits for data to be collected before closing */
