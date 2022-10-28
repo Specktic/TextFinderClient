@@ -9,13 +9,19 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class ClientController implements Initializable {
+
+    /** Attribute 1, a JavaFX TextField */
     @FXML
     private TextField searchField;
+
+    /** Attribute 2, a client object */
     private Client client;
 
+    /** Asks the server to add a given file to the TextsLibrary directory */
     public void addFile() {
     }
 
+    /** Gets the text from the TextField and sends it to the server for searching */
     public void search(){
         String search = searchField.getText();
         if (!search.isEmpty()) {
