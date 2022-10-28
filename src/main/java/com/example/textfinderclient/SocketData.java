@@ -1,9 +1,8 @@
 package com.example.textfinderclient;
 import java.io.*;
 
-/** data to be sent to server */
 public class SocketData implements Serializable{
-    /** constructor 1 */
+    /** Class constructor */
     public SocketData(String data){
         if (data != null){
             this.len = data.length();
@@ -11,13 +10,13 @@ public class SocketData implements Serializable{
         }
     }
 
-    /** attribute 1, a string */
+    /** Attribute 1, a string */
     private String word;
 
-    /** attribute 2, an int */
+    /** Attribute 2, an int */
     private int len;
 
-    /** method for reading data fluxes as strings */
+    /** Returns data fluxes as strings */
     public String toString(){
         String word1;
         word1 = word;
@@ -25,14 +24,14 @@ public class SocketData implements Serializable{
 
     }
 
-    /** method for writing attributes as a DataOutputStream */
+    /** Writes the word attribute to the data output flux */
     public void writeObject(DataOutputStream out) throws IOException{
         out.writeInt (len +1);
         out.writeBytes(word);
         out.writeByte('\0');
     }
 
-    /** method for reading the attributes of a DataInputStream */
+    /** Reads the incoming data from the data input flux */
     public void readObject(DataInputStream in) throws IOException{
         len = in.readInt() - 1;
         byte [] aux;
