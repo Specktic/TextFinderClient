@@ -3,7 +3,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
 
-import java.io.IOException;
+import java.io.*;
 import java.net.Socket;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -15,7 +15,7 @@ public class ClientController implements Initializable {
     private TextField searchField;
 
     /** Attribute 2, a client object */
-    private Client client;
+    private Socket client;
 
     /** Asks the server to add a given file to the TextsLibrary directory */
     public void addFile() {
@@ -23,11 +23,35 @@ public class ClientController implements Initializable {
 
     /** Gets the text from the TextField and sends it to the server for searching */
     public void search() throws IOException {
-        String search = searchField.getText();
-        if (!search.isEmpty()) {
-            client.send(search);
-            searchField.clear();
-            String results = client.receive();
+
+        InputStreamReader inputStreamReader = null;
+        OutputStreamWriter outputStreamWriter = null;
+
+        BufferedReader bufferedReader = null;
+        BufferedWriter bufferedWriter = null;
+
+        try {
+
+            inputStreamReader = new InputStreamReader(client.getInputStream());
+            outputStreamWriter = new OutputStreamWriter(client.getOutputStream());
+
+            bufferedReader = new BufferedReader(inputStreamReader);
+            bufferedWriter = new BufferedWriter(outputStreamWriter);
+
+            while (true) {
+
+                String search = searchField.getText();
+
+                bufferedWriter.write(search);
+                bufferedWriter.newLine();
+                bufferedWriter.flush();
+
+                System.out.println(bufferedReader.readLine());
+                break;
+
+            }
+        } catch (Exception e){
+            e.printStackTrace();
         }
     }
 
@@ -35,7 +59,7 @@ public class ClientController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         try {
-            client = new Client(new Socket("localhost", 6174));
+            client = new Socket("localhost", 6174);
             System.out.println("connected");
 
         } catch (IOException e) {
