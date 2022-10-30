@@ -22,13 +22,13 @@ public class ClientController implements Initializable {
     }
 
     /** Gets the text from the TextField and sends it to the server for searching */
-    public void search() throws IOException {
+    public void search() {
 
-        InputStreamReader inputStreamReader = null;
-        OutputStreamWriter outputStreamWriter = null;
+        InputStreamReader inputStreamReader;
+        OutputStreamWriter outputStreamWriter;
 
-        BufferedReader bufferedReader = null;
-        BufferedWriter bufferedWriter = null;
+        BufferedReader bufferedReader;
+        BufferedWriter bufferedWriter;
 
         try {
 
@@ -38,18 +38,14 @@ public class ClientController implements Initializable {
             bufferedReader = new BufferedReader(inputStreamReader);
             bufferedWriter = new BufferedWriter(outputStreamWriter);
 
-            while (true) {
+            String search = searchField.getText();
 
-                String search = searchField.getText();
+            bufferedWriter.write(search);
+            bufferedWriter.newLine();
+            bufferedWriter.flush();
 
-                bufferedWriter.write(search);
-                bufferedWriter.newLine();
-                bufferedWriter.flush();
+            System.out.println(bufferedReader.readLine());
 
-                System.out.println(bufferedReader.readLine());
-                break;
-
-            }
         } catch (Exception e){
             e.printStackTrace();
         }
