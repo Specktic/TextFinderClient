@@ -1,6 +1,7 @@
 package com.example.textfinderclient;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.stage.FileChooser;
 
@@ -15,7 +16,11 @@ public class ClientController implements Initializable {
     @FXML
     private TextField searchField;
 
-    /** Attribute 2, a client object */
+    /** Attribute 1, a JavaFX TextField */
+    @FXML
+    private ListView results;
+
+    /** Attribute 3, a client object */
     private Socket client;
 
     /** Gets the text from the TextField, sends it to the server for searching and reads the result */
@@ -41,7 +46,11 @@ public class ClientController implements Initializable {
             bufferedWriter.newLine();
             bufferedWriter.flush();
 
-            System.out.println(bufferedReader.readLine());
+            String results = bufferedReader.readLine();
+
+            this.results.getItems().add(results);
+
+            System.out.println(results);
 
         } catch (Exception e){
             e.printStackTrace();

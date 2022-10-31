@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.paint.Color?>
@@ -84,5 +85,6 @@
             <Font name="Berlin Sans FB" size="18.0" />
          </font>
       </Button>
+      <ListView fx:id="results" layoutX="14.0" layoutY="145.0" prefHeight="227.0" prefWidth="572.0" style="-fx-border-color: #00bbe0; -fx-border-width: 2; -fx-background-color: #dddddd;" />
    </children>
 </AnchorPane>
