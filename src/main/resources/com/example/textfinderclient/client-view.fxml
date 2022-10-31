@@ -35,7 +35,7 @@
             </LinearGradient>
          </fill>
       </Rectangle>
-      <Button alignment="CENTER_RIGHT" layoutX="215.0" layoutY="90.0" mnemonicParsing="false" onAction="#addFile" prefHeight="37.0" prefWidth="175.0" style="-fx-background-color: #eeeeee;" text="Add" textFill="#00bbe0">
+      <Button alignment="CENTER_RIGHT" layoutX="215.0" layoutY="100.0" mnemonicParsing="false" onAction="#addFile" prefHeight="37.0" prefWidth="175.0" style="-fx-background-color: #eeeeee;" text="Add" textFill="#00bbe0">
          <font>
             <Font name="Berlin Sans FB" size="18.0" />
          </font></Button>
@@ -62,22 +62,27 @@
             </LinearGradient>
          </fill>
       </Rectangle>
-      <Button alignment="CENTER_RIGHT" layoutX="14.0" layoutY="90.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="175.0" style="-fx-background-color: #eeeeee;" text="Remove" textFill="#00bbe0">
+      <Button alignment="CENTER_RIGHT" layoutX="14.0" layoutY="100.0" mnemonicParsing="false" onAction="#removeFile" prefHeight="37.0" prefWidth="175.0" style="-fx-background-color: #eeeeee;" text="Remove" textFill="#00bbe0">
          <font>
             <Font name="Berlin Sans FB" size="18.0" />
          </font>
       </Button>
-      <Rectangle arcHeight="10.0" arcWidth="10.0" fill="#bbbbbb" height="26.0" layoutX="236.0" layoutY="96.0" stroke="#bbbbbb" strokeType="INSIDE" width="5.0" />
-      <Rectangle arcHeight="10.0" arcWidth="10.0" fill="#bbbbbb" height="26.0" layoutX="36.0" layoutY="96.0" rotate="90.0" stroke="#bbbbbb" strokeType="INSIDE" width="5.0" />
-      <Rectangle arcHeight="10.0" arcWidth="10.0" fill="#bbbbbb" height="26.0" layoutX="236.0" layoutY="96.0" rotate="90.0" stroke="#bbbbbb" strokeType="INSIDE" width="5.0" />
-      <Button alignment="CENTER_RIGHT" layoutX="410.0" layoutY="90.0" mnemonicParsing="false" onAction="#search" prefHeight="37.0" prefWidth="175.0" style="-fx-background-color: #eeeeee;" text="Search" textFill="#00bbe0">
+      <Rectangle arcHeight="10.0" arcWidth="10.0" fill="#bbbbbb" height="26.0" layoutX="236.0" layoutY="105.0" stroke="#bbbbbb" strokeType="INSIDE" width="5.0" />
+      <Rectangle arcHeight="10.0" arcWidth="10.0" fill="#bbbbbb" height="26.0" layoutX="36.0" layoutY="105.0" rotate="90.0" stroke="#bbbbbb" strokeType="INSIDE" width="5.0" />
+      <Rectangle arcHeight="10.0" arcWidth="10.0" fill="#bbbbbb" height="26.0" layoutX="236.0" layoutY="105.0" rotate="90.0" stroke="#bbbbbb" strokeType="INSIDE" width="5.0" />
+      <Button alignment="CENTER_RIGHT" layoutX="411.0" layoutY="100.0" mnemonicParsing="false" onAction="#search" prefHeight="37.0" prefWidth="175.0" style="-fx-background-color: #eeeeee;" text="Search" textFill="#00bbe0">
          <font>
             <Font name="Berlin Sans FB" size="18.0" />
          </font>
       </Button>
-      <TextField fx:id="searchField" layoutX="14.0" layoutY="65.0" prefHeight="26.0" prefWidth="572.0" promptText="Search for..." style="-fx-background-color: #ffffff;" />
-      <Circle fill="#bbbbbb" layoutX="431.0" layoutY="107.0" radius="10.0" stroke="#bbbbbb" strokeType="INSIDE" />
-      <Rectangle arcHeight="10.0" arcWidth="10.0" fill="#bbbbbb" height="26.0" layoutX="436.0" layoutY="101.0" rotate="135.0" stroke="#bbbbbb" strokeType="INSIDE" width="5.0" />
-      <Circle fill="#eeeeee" layoutX="431.0" layoutY="107.0" radius="7.8" stroke="#eeeeee" strokeType="INSIDE" />
+      <TextField fx:id="searchField" layoutX="14.0" layoutY="58.0" prefHeight="37.0" prefWidth="572.0" promptText="Search for..." style="-fx-background-color: #ffffff;" />
+      <Circle fill="#bbbbbb" layoutX="431.0" layoutY="116.0" radius="10.0" stroke="#bbbbbb" strokeType="INSIDE" />
+      <Rectangle arcHeight="10.0" arcWidth="10.0" fill="#bbbbbb" height="26.0" layoutX="436.0" layoutY="110.0" rotate="135.0" stroke="#bbbbbb" strokeType="INSIDE" width="5.0" />
+      <Circle fill="#eeeeee" layoutX="431.0" layoutY="116.0" radius="7.7" stroke="#eeeeee" strokeType="INSIDE" />
+      <Button alignment="CENTER" layoutX="14.0" layoutY="16.0" mnemonicParsing="false" onAction="#initializeLibrary" prefHeight="37.0" prefWidth="572.0" style="-fx-background-color: #eeeeee;" text="Load Library" textFill="#00bbe0">
+         <font>
+            <Font name="Berlin Sans FB" size="18.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

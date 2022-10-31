@@ -2,6 +2,7 @@ package com.example.textfinderclient;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
+import javafx.stage.FileChooser;
 
 import java.io.*;
 import java.net.Socket;
@@ -17,18 +18,14 @@ public class ClientController implements Initializable {
     /** Attribute 2, a client object */
     private Socket client;
 
-    /** Asks the server to add a given file to the TextsLibrary directory */
-    public void addFile() {
-    }
-
-    /** Gets the text from the TextField and sends it to the server for searching */
+    /** Gets the text from the TextField, sends it to the server for searching and reads the result */
     public void search() {
 
-        InputStreamReader inputStreamReader;
-        OutputStreamWriter outputStreamWriter;
+        InputStreamReader inputStreamReader = null;
+        OutputStreamWriter outputStreamWriter = null;
 
-        BufferedReader bufferedReader;
-        BufferedWriter bufferedWriter;
+        BufferedReader bufferedReader = null;
+        BufferedWriter bufferedWriter = null;
 
         try {
 
@@ -41,6 +38,76 @@ public class ClientController implements Initializable {
             String search = searchField.getText();
 
             bufferedWriter.write(search);
+            bufferedWriter.newLine();
+            bufferedWriter.flush();
+
+            System.out.println(bufferedReader.readLine());
+
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    public void addFile() {
+
+        InputStreamReader inputStreamReader = null;
+        OutputStreamWriter outputStreamWriter = null;
+
+        BufferedReader bufferedReader = null;
+        BufferedWriter bufferedWriter = null;
+
+        FileChooser fc = new FileChooser();
+
+        fc.setInitialDirectory(new File("Texts"));
+        File file = fc.showOpenDialog(null);
+
+        if (file != null) {
+
+            String filePath = file.getName();
+
+            try {
+
+                inputStreamReader = new InputStreamReader(client.getInputStream());
+                outputStreamWriter = new OutputStreamWriter(client.getOutputStream());
+
+                bufferedReader = new BufferedReader(inputStreamReader);
+                bufferedWriter = new BufferedWriter(outputStreamWriter);
+
+                bufferedWriter.write(filePath);
+                bufferedWriter.newLine();
+                bufferedWriter.flush();
+
+                System.out.println(bufferedReader.readLine());
+
+            } catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+
+        else {
+            System.out.println("No file selected");
+        }
+    }
+
+    public void removeFile() {}
+
+    public void initializeLibrary() {
+
+        InputStreamReader inputStreamReader = null;
+        OutputStreamWriter outputStreamWriter = null;
+
+        BufferedReader bufferedReader = null;
+        BufferedWriter bufferedWriter = null;
+
+        try {
+
+            inputStreamReader = new InputStreamReader(client.getInputStream());
+            outputStreamWriter = new OutputStreamWriter(client.getOutputStream());
+
+            bufferedReader = new BufferedReader(inputStreamReader);
+            bufferedWriter = new BufferedWriter(outputStreamWriter);
+
+            bufferedWriter.write("@LOAD@");
             bufferedWriter.newLine();
             bufferedWriter.flush();
 
