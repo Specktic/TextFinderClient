@@ -23,7 +23,7 @@ public class ClientController implements Initializable {
     /** Attribute 3, a client object */
     private Socket client;
 
-    /** Gets the text from the TextField, sends it to the server for searching and reads the result */
+    /** Gets text from the TextField and sends it to the server for searching and reads the result */
     public void search() {
 
         InputStreamReader inputStreamReader = null;
@@ -57,6 +57,7 @@ public class ClientController implements Initializable {
         }
     }
 
+    /** Sends a file name for the server to add to a text library */
     public void addFile() {
 
         InputStreamReader inputStreamReader = null;
@@ -98,8 +99,10 @@ public class ClientController implements Initializable {
         }
     }
 
+    /** Removes a file from the texts library */
     public void removeFile() {}
 
+    /** Instructs the server to parse current text library */
     public void initializeLibrary() {
 
         InputStreamReader inputStreamReader = null;
@@ -127,6 +130,7 @@ public class ClientController implements Initializable {
         }
     }
 
+    /** GUI initialize method */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
